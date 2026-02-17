@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PhishGuard protects you from malicious websites in real-time." />
+  <title>PhishGuard - Smart Phishing Protection</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <div class="main-container">
+    <!-- Header -->
+    <header>
+      <div class="header-content">
+        <div class="logo-wrapper">
+          <img src="icon.png" alt="PhishGuard Logo" class="main-logo">
+          <div class="pulse-ring"></div>
+        </div>
+        <div class="header-text">
+          <h1>PhishGuard</h1>
+          <p class="status-badge"><svg width="8" height="8" style="margin-right: 4px;">
+              <circle cx="4" cy="4" r="3" fill="#00ff88" />
+            </svg> System Active</p>
+        </div>
+        <button id="history-btn" class="icon-btn" title="View History">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="12" x2="16" y2="14"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Scanner Section -->
+    <main class="scanner-section">
+      <div class="content-wrapper">
+        <div class="intro-text">
+          <h2>URL Safety Check</h2>
+          <p>Instantly verify if a link is safe before you visit.</p>
+        </div>
+
+        <div class="search-container">
+          <div class="input-group">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="margin: 0 10px; opacity: 0.5;">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+            <input type="text" id="url-input" placeholder="Enter or paste URL here..." autocomplete="off" />
+            <button id="scan-btn">
+              <span class="btn-text">Analyze</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                style="margin-left: 8px;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="result" class="result-area">
+          <!-- Results will be injected here -->
+          <div class="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+              style="opacity: 0.2; margin-bottom: 10px;">
+              <path d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z"></path>
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
+              <path d="M12 11v10"></path>
+            </svg>
+            <p>Waiting for URL input</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-info">
+        <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"
+            style="margin-right: 5px;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg> VirusTotal & PhishTank Protected</p>
+        <div class="api-status">
+          <span class="status-label">API Status:</span>
+          <span class="status-value">Connected</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- History Panel -->
+    <div id="history-panel" class="history-panel">
+      <div class="history-header">
+        <h3>Scan History</h3>
+        <button id="close-history" class="close-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="history-list" class="history-list">
+        <!-- History items will be injected here -->
+        <div class="empty-history">
+          <p>No history yet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

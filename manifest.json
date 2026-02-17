@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard - Phishing Protection",
+  "version": "1.0",
+  "description": "Detect and block phishing websites in real-time using ML and APIs.",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "notifications",
+    "activeTab",
+    "scripting",
+    "webNavigation"
+  ],
+  "action": {
+    "default_popup": "phishing-detector.html",
+    "default_icon": "icon.png"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
